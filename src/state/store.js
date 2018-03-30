@@ -1,17 +1,19 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
+import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import thunkMiddleware from "redux-thunk";
 import * as reducers from "./features";
-import { apiService } from "./middlewares";
+import { logger } from "./middlewares";
 
-export default function configureStore( initialState ) {
-    const rootReducer = combineReducers( reducers );
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+export default function configureStore (initialState) {
+    const rootReducer = combineReducers(reducers);
 
     return createStore(
         rootReducer,
         initialState,
-        applyMiddleware(
-            apiService,
+        composeEnhancers(applyMiddleware(
+            logger,
             thunkMiddleware,
-        ),
+        )),
     );
 }
