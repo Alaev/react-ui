@@ -8,12 +8,19 @@ import { specs, describe, it } from 'storybook-addon-specifications'
 import { mount, configure } from "enzyme";
 import expect from "expect";
 import Adapter from 'enzyme-adapter-react-16';
+import { setAddon, storiesOf } from '@storybook/react';
+import JSXAddon from 'storybook-addon-jsx';
 
-
+setAddon(JSXAddon);
 configure({ adapter: new Adapter() });
 
 import note from './note.md';
 
+const Test = ({ fontSize = '16px', fontFamily = 'Arial', align = 'left', color = 'red', children }) => (
+    <div style={{ color, fontFamily, fontSize, textAlign: align }}>
+      {children}
+    </div>
+  );
 
 
 export default (storiesOf) => {
@@ -43,4 +50,9 @@ export default (storiesOf) => {
 
             return story;
         })
+        .addWithJSX('Paris', () => (
+            <Test fontSize={45} fontFamily="Roboto" align="center" color="#CAF200">
+              Hello
+            </Test>
+          ))
 }
