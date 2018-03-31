@@ -9,6 +9,7 @@ import { mount, configure } from "enzyme";
 import expect from "expect";
 import Adapter from 'enzyme-adapter-react-16';
 import JSXAddon from 'storybook-addon-jsx';
+import { Button } from '@storybook/react/demo';
 
 import Card from './Card'
 
@@ -23,7 +24,9 @@ const Test = ({ fontSize = '16px', fontFamily = 'Arial', align = 'left', color =
     </div>
 );
 
-const CardStory = (storiesOf('Card', module).addDecorator(withKnobs)
+const CardStory = (storiesOf('AddOn example', module).addDecorator(withKnobs)
+    .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
+    .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>)
     .add('with text without children', () => <Card></Card>)
     .add('with text children', () => <Card disabled={boolean('Disabled', false)} >😀 😎 👍 💯</Card>)
     .add('with click action', () => <Card actions="true" logAction={action()}> {text('Button Text', 'Change in knobs panel')}<br /></Card>
