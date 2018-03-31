@@ -1,12 +1,11 @@
-import _ from 'lodash';
-import { createSelector } from 'reselect'
+import * as _ from 'lodash';
+import { createSelector } from 'reselect';
 
 const getState = state => {
-    return state.cart
-}
+    return state.cart;
+};
 
 export const getCartItemQuantity = createSelector(
     getState,
     (state) => _.size(state)
-  )
-
+);

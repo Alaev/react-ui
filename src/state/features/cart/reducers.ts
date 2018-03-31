@@ -1,6 +1,6 @@
-import * as types from "./types";
-import { createReducer } from "../../utils";
-import _ from 'lodash';
+import * as types from './types';
+import { createReducer } from '../../utils';
+import * as _ from 'lodash';
 
 /* State shape
 {
@@ -13,17 +13,17 @@ import _ from 'lodash';
 */
 
 const initialState = {
-    3: {id:1, name:'bob'}
+    3: { id: 1, name: 'bob' }
 };
 
-const cartReducer = createReducer(initialState)({
+const cart = createReducer(initialState)({
     [types.ADD]: (state, action) => {
         const { product, quantity } = action.payload;
-        return { ...state, [product.id]: { ...product, quantity } }
+        return { ...state, [product.id]: { ...product, quantity } };
     },
     [types.CHANGE_QUANTITY]: (state, action) => {
         const { product, quantity } = action.payload;
-        return { ...state, [product.id]: { ...product, quantity } }
+        return { ...state, [product.id]: { ...product, quantity } };
     },
     [types.REMOVE]: (state, action) => {
         const { id } = action.payload;
@@ -31,9 +31,9 @@ const cartReducer = createReducer(initialState)({
     },
     [types.CLEAR]: () => ({}),
     [types.SET_CART]: (state = initialState, action) => {
-        const {savedCart} = action.payload;
-        return savedCart
+        const { savedCart } = action.payload;
+        return savedCart;
     }
 });
 
-export default cartReducer;
+export default cart;
