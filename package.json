@@ -36,6 +36,10 @@
     "@types/react": "^16.1.0",
     "@types/react-dom": "^16.0.4",
     "@types/storybook__react": "^3.0.7",
-    "babel-core": "^6.26.0"
+    "babel-core": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "expect": "^22.4.3",
+    "storybook-addon-specifications": "^2.1.1"
   }
 }
