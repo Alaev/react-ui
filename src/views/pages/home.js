@@ -26,8 +26,7 @@ class Home extends Component {
     }
 
     render () {
-        return (
-            <React.Fragment>
+        return (<div>
                 <p>{dictionary.title}</p>
 
                 <h2>cart </h2>
@@ -43,7 +42,7 @@ class Home extends Component {
                 <pre>{
                     JSON.stringify(this.props.cart, null, 2)
                 }</pre>
-            </React.Fragment>
+            </div>
         )
     }
 }
