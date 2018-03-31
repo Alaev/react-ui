@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-env": "^7.0.0-beta.42",
     "@storybook/addon-knobs": "^3.4.0",
+    "babel-loader": "^8.0.0-beta.2",
+    "babel-plugin-emotion": "^9.1.0",
+    "emotion": "^9.1.0",
     "lodash": "^4.17.5",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "react-emotion": "^9.1.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
@@ -15,13 +20,15 @@
     "redux-devtools": "^3.4.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "ts-loader": "^4.1.0",
+    "typescript": "^2.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start --scripts-version react-scripts-ts",
+    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "test": "react-app-rewired test --scripts-version react-scripts-ts --env=jsdom",
+    "eject": "react-app-rewired eject --scripts-version react-scripts-ts",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -41,6 +48,8 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "expect": "^22.4.3",
+    "react-app-rewired": "^1.5.0",
+    "react-scripts-ts": "^2.14.0",
     "storybook-addon-jsx": "^5.3.0",
     "storybook-addon-specifications": "^2.1.1"
   }
