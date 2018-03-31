@@ -11,12 +11,14 @@ export default class Card extends Component {
     }
 
     handelAdd = () => {
+        this.props.logAction('handelAdd clicked')
         this.setState((prevState) => {
             return { count: prevState.count + 1 }
         })
     }
 
     handelSubtract = () => {
+        this.props.logAction('HandelSubtract clicked')
         this.setState((prevState) => {
             return { count: prevState.count - 1 }
         })
