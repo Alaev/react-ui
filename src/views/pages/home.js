@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { cartOperations } from "../../state/features/cart";
-import styled from 'react-emotion';
 import { dictionary } from "../utilities";
 
 const product = { id: 1, name: 'apple' };
@@ -10,13 +9,6 @@ const productB = { id: 2, name: 'banana' };
 const quantity = 2
 const newQ = 5
 const localStorage = null
-
-const Toast = styled('div')`
-    color:white;
-    background-color:blue;
-    width:200px;
-`;
-
 
 class Home extends Component {
     componentDidMount () {
@@ -30,7 +22,6 @@ class Home extends Component {
                 <p>{dictionary.title}</p>
 
                 <h2>cart </h2>
-                <Toast> Some Toast </Toast>
                 <button onClick={() => this.props.addToCart(product, quantity)}>addToCart</button>
                 <button onClick={() => this.props.addToCart(productB, quantity)}>addSecondOption</button>
                 <button onClick={() => this.props.changeQuantity(productB, newQ)}>updateQuantity</button>

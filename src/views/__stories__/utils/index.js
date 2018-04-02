@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Provider as ReduxProvider, createStore, applyMiddleware } from 'react-redux';
-import configureStore from "../../../state/store";
+import { configureStore } from "../../../state/store";
 
 
 const store = configureStore({});

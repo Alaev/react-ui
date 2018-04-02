@@ -17,5 +17,5 @@ const RootHtml = () => (
     </ReduxProvider>
 );
 
-ReactDOM.render(<RootHtml />, document.getElementById('root') as HTMLElement);
+ReactDOM.render(<RootHtml />, document.getElementById('root'));
 registerServiceWorker();
