@@ -8,7 +8,6 @@ import {  Welcome } from '@storybook/react/demo';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('AddOn example')} />);
 
-
 // // Components Stories
 const Card = require('./components/Card');
 

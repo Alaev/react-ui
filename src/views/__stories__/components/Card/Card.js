@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
 export default class Card extends Component {
 
     state = {
@@ -22,7 +21,6 @@ export default class Card extends Component {
             return { count: prevState.count - 1 }
         })
     }
-
 
     render () {
         return (
