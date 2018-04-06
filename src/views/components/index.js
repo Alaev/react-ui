@@ -1,3 +1,0 @@
-function components () {
-    return true;
-}

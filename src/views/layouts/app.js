@@ -5,7 +5,9 @@ import routes from '../../routes';
 const App = () => (
     <div>
         <header>
-            <Link to="/">Home</Link>
+            <Link to="/">MAIN</Link>
+            <Link to="/home">Home</Link>
+            
         </header>
 
         {routes.map(route => (
