@@ -5,14 +5,23 @@ const styles = {
   textAlign: 'center'
 };
 
-const CheckboxCel = props => {
-  const { info, data } = props;
-  const { type, value } = data;
+const defaultProps = { handelCheckboxInteraction: () => console.log('handelChange') };
+
+export const CheckboxCel = props => {
+  const { info, handelCheckboxInteraction, data: { type, value } } = props;
   return (
     <td style={styles}>
-      <TableContext.Consumer>{({ actions }) => <input type={type} checked={value} name={info} onChange={actions.handelCheckboxInteraction} />}</TableContext.Consumer>
+      <input type={type} name={info} defaultChecked={value} onChange={handelCheckboxInteraction} />
     </td>
   );
 };
 
-export default CheckboxCel;
+CheckboxCel.defaultProps = {
+  handelCheckboxInteraction: () => console.warn('hi did you forget to pass actions?')
+};
+
+const ConnectedCheckboxCel = props => {
+  return <TableContext.Consumer>{({ actions } = {}) => <CheckboxCel {...props} {...actions} />}</TableContext.Consumer>;
+};
+
+export default ConnectedCheckboxCel;

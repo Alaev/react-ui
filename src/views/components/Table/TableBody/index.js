@@ -3,12 +3,12 @@ import Rows from '../Rows';
 import NoData from '../NoData';
 import { TableContext } from '../../../../context/table';
 
-const TableBody = () => {
-  return (
-    <tbody>
-      <TableContext.Consumer>{({ tableRows }) => (tableRows && <Rows tableRows={tableRows} />) || <NoData message="No data found" />}</TableContext.Consumer>
-    </tbody>
-  );
+export const TableBody = ({ tableRows }) => {
+  return <tbody>{(tableRows && <Rows tableRows={tableRows} />) || <NoData message="No data found" />}</tbody>;
 };
 
-export default TableBody;
+const ConnectedTableBody = () => {
+  return <TableContext.Consumer>{({ tableRows }) => <TableBody tableRows={tableRows} />}</TableContext.Consumer>;
+};
+
+export default ConnectedTableBody;
