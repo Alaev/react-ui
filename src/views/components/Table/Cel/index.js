@@ -3,10 +3,15 @@ import * as _isObject from 'lodash/isObject';
 import CheckboxCel from './CheckboxCel';
 
 const Cel = ({ data, info }) => {
-  if (_isObject(data) && data.type === "checkbox" ) {
-    return <CheckboxCel data={data} info={info} />;
+  switch (data.type) {
+    case 'checkbox':
+      return <CheckboxCel data={data} info={info} />;
+    case 'radio':
+      return <td>radio cell that support grouping</td>  
+
+    default:
+      return <td>{data}</td>;
   }
-  return <td>{data}</td>;
 };
 
 export default Cel;
