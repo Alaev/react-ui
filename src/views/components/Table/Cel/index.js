@@ -1,5 +1,4 @@
 import React from 'react';
-import * as _isObject from 'lodash/isObject';
 import CheckboxCel from './CheckboxCel';
 
 const Cel = ({ data, info }) => {
