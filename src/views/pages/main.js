@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
 import Table from '../components/Table';
+import TableProvider from '../../context/table';
 
 class Main extends Component {
   render() {
     return (
       <div className="container">
         <h1>React Table component</h1>
-        <br/>
-        <br/>
-        <Table />
+        <br />
+        <br />
+        <Table Provider={TableProvider} />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default Main;

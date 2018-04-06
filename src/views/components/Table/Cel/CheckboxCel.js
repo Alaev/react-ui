@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableContext } from '../../Table';
+import { TableContext } from '../../../../context/table';
 
 const styles = {
   textAlign: 'center'
