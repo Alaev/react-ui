@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "redux-logger": "^3.0.6",
+    "bulma": "^0.6.2",
     "lodash": "^4.17.5",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
@@ -12,8 +12,10 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "styled-components": "^3.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,25 +26,25 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "redux-devtools": "^3.4.1",
-    "@storybook/addon-knobs": "^3.4.0",
-    "@types/lodash": "^4.14.106",
-    "@types/react-redux": "^5.0.15",
-    "@types/react-router-dom": "^4.2.6",
     "@storybook/addon-actions": "^3.4.0",
     "@storybook/addon-info": "^3.4.0",
+    "@storybook/addon-knobs": "^3.4.0",
     "@storybook/addon-links": "^3.4.0",
     "@storybook/addon-notes": "^3.4.0",
     "@storybook/addons": "^3.4.0",
     "@storybook/react": "^3.4.0",
     "@types/jest": "^22.2.2",
+    "@types/lodash": "^4.14.106",
     "@types/node": "^9.6.1",
     "@types/react": "^16.1.0",
     "@types/react-dom": "^16.0.4",
+    "@types/react-redux": "^5.0.15",
+    "@types/react-router-dom": "^4.2.6",
     "@types/storybook__react": "^3.0.7",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "expect": "^22.4.3",
+    "redux-devtools": "^3.4.1",
     "storybook-addon-jsx": "^5.3.0",
     "storybook-addon-specifications": "^2.1.1"
   }
