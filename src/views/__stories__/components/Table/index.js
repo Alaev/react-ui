@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
+import Table, { TableContext } from '../../../../views/components/Table';
+import 'bulma/css/bulma.css';
 
-import { Table } from "../../../components/Table";
-const HomePageStory =  storiesOf('HomePage', module)
-    .add('Table component', () => <Table />);
+console.log(TableContext);
 
-export default HomePageStory
+const TableComponentStory = storiesOf('Table component story', module).add('With Data', () => <Table />);
