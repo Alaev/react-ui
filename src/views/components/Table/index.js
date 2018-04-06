@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Row from './Row';
+import Rows from './Rows';
 import NoData from './NoData';
 import INIT_DATA from './initData';
 
@@ -9,7 +9,7 @@ class TableProvider extends Component {
   };
 
   componentDidMount() {
-    this.setState({ tableRows: INIT_DATA }, () => console.log('data loaded', JSON.stringify(INIT_DATA, null, 2)));
+    this.setState({ tableRows: INIT_DATA }, () => console.log('data loaded'));
   }
 
   handelCheckboxInteraction = event => {
@@ -46,7 +46,7 @@ const Table = () => (
   <TableProvider>
     <table className="table is-bordered is-fullwidth">
       <tbody>
-        <TableContext.Consumer>{({ tableRows }) => (tableRows && <Row tableRows={tableRows} />) || <NoData message="No data found" />}</TableContext.Consumer>
+        <TableContext.Consumer>{({ tableRows }) => (tableRows && <Rows tableRows={tableRows} />) || <NoData message="No data found" />}</TableContext.Consumer>
       </tbody>
     </table>
   </TableProvider>
