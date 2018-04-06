@@ -1,35 +1,16 @@
 import React, { Component } from 'react';
 import Row from './Row';
-
-export const TableContext = React.createContext();
+import NoData from './NoData';
+import INIT_DATA from './initData';
 
 class TableProvider extends Component {
   state = {
-    tableRows: {
-      1: {
-        id: 1,
-        name: 'javascript 101',
-        date: '23-01-2018',
-        author: 'Bob',
-        publisher: 'web',
-        watched: {
-          type: 'checkbox',
-          value: true
-        }
-      },
-      2: {
-        id: 2,
-        name: 'javascript 102',
-        date: '23-01-2018',
-        author: 'Bob2',
-        publisher: 'web',
-        watched: {
-          type: 'checkbox',
-          value: false
-        }
-      }
-    }
+    tableRows: null
   };
+
+  componentDidMount() {
+    this.setState({ tableRows: INIT_DATA }, () => console.log('data loaded', JSON.stringify(INIT_DATA, null, 2)));
+  }
 
   handelCheckboxInteraction = event => {
     const target = event.target;
@@ -49,8 +30,10 @@ class TableProvider extends Component {
     return (
       <TableContext.Provider
         value={{
-          state: this.state,
-          handelCheckboxInteraction: this.handelCheckboxInteraction
+          ...this.state,
+          actions: {
+            handelCheckboxInteraction: this.handelCheckboxInteraction
+          }
         }}
       >
         {this.props.children}
@@ -59,18 +42,15 @@ class TableProvider extends Component {
   }
 }
 
-class Table extends Component {
-  render() {
-    return (
-      <TableProvider>
-        <table className="table is-bordered is-fullwidth">
-          <tbody>
-            <TableContext.Consumer>{context => <Row tableRows={context} />}</TableContext.Consumer>
-          </tbody>
-        </table>
-      </TableProvider>
-    );
-  }
-}
+const Table = () => (
+  <TableProvider>
+    <table className="table is-bordered is-fullwidth">
+      <tbody>
+        <TableContext.Consumer>{({ tableRows }) => (tableRows && <Row tableRows={tableRows} />) || <NoData message="No data found" />}</TableContext.Consumer>
+      </tbody>
+    </table>
+  </TableProvider>
+);
 
 export default Table;
+export const TableContext = React.createContext();

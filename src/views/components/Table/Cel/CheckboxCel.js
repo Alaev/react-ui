@@ -10,7 +10,7 @@ const CheckboxCel = props => {
   const { type, value } = data;
   return (
     <td style={styles}>
-      <TableContext.Consumer>{contex => <input type={type} checked={value} name={info} onChange={contex.handelCheckboxInteraction} />}</TableContext.Consumer>
+      <TableContext.Consumer>{({ actions }) => <input type={type} checked={value} name={info} onChange={actions.handelCheckboxInteraction} />}</TableContext.Consumer>
     </td>
   );
 };

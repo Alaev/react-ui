@@ -4,7 +4,7 @@ import Cel from '../Cel';
 import _ from 'lodash';
 
 const Row = ({ tableRows }) => {
-  return _.map(tableRows.state.tableRows, row => {
+  return _.map(tableRows, row => {
     return (
       <tr key={row.id}>
         {_.map(row, data => {
