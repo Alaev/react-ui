@@ -6,7 +6,7 @@ import TableProvider from '../../../../context/table';
 
 import 'bulma/css/bulma.css';
 
-const table_body = {
+const table_body_one = {
     1: {
       id: 1,
       name: 'javascript 101',
@@ -20,7 +20,7 @@ const table_body = {
     }
   }
 
-  const table_body2 = {
+  const table_body_two = {
     1: {
       id: 1,
       name: 'javascript 101',
@@ -34,7 +34,23 @@ const table_body = {
     }
   }
 
+  const table_body_missing_cell = {
+    1: {
+      id: '',
+      name: '',
+      date: '',
+      author: '',
+      publisher: '',
+      watched: {
+        type: 'checkbox',
+        value: false
+      }
+    }
+  }
+
 const TableComponentStory = storiesOf('Table Components', module)
 .add('Table with Context', () => <Table Provider={TableProvider} />)
-.add('TableBody checked', () => <table className="table is-bordered is-fullwidth"><TableBody tableRows={table_body} /></table>)
-.add('TableBody not checked', () => <table className="table is-bordered is-fullwidth"><TableBody tableRows={table_body2} /></table>);
+.add('TableBody checked', () => <table className="table is-bordered is-fullwidth"><TableBody tableRows={table_body_one} /></table>)
+.add('TableBody not checked', () => <table className="table is-bordered is-fullwidth"><TableBody tableRows={table_body_two} /></table>)
+.add('Table with empty cells', () => <table className="table is-bordered is-fullwidth"><TableBody tableRows={table_body_missing_cell} /></table>);
+
