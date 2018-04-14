@@ -23,13 +23,18 @@ export default class TableProvider extends Component {
     });
   };
 
+  handelAddRow = (state) => {
+    console.log(state);
+  }
+
   render() {
     return (
       <TableContext.Provider
         value={{
           ...this.state,
           actions: {
-            handelCheckboxInteraction: this.handelCheckboxInteraction
+            handelCheckboxInteraction: this.handelCheckboxInteraction,
+            handelAddRow: this.handelAddRow
           }
         }}
       >

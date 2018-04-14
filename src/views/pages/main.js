@@ -10,6 +10,8 @@ class Main extends Component {
         <br />
         <br />
         <Table Provider={TableProvider} />
+
+    
       </div>
     );
   }

@@ -5,8 +5,6 @@ const styles = {
   textAlign: 'center'
 };
 
-const defaultProps = { handelCheckboxInteraction: () => console.log('handelChange') };
-
 export const CheckboxCel = props => {
   const { info, handelCheckboxInteraction, data: { type, value } } = props;
   return (
