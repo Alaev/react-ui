@@ -23,8 +23,15 @@ export default class TableProvider extends Component {
     });
   };
 
-  handelAddRow = (state) => {
-    console.log(state);
+  handelAddRow = (newRow) => {
+    const randomId = Math.random();
+    newRow.id = randomId
+    const newTableRawState = { ...this.state };
+    newTableRawState.tableRows[randomId] = newRow;
+
+    this.setState(newRow, () => {
+      console.log('new state', newRow);
+    })
   }
 
   render() {
