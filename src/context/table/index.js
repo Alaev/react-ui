@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import INIT_DATA from './initData';
 export const TableContext = React.createContext();
 export default class TableProvider extends Component {
@@ -23,16 +23,16 @@ export default class TableProvider extends Component {
     });
   };
 
-  handelAddRow = (newRow) => {
+  handelAddRow = newRow => {
     const randomId = Math.random();
-    newRow.id = randomId
+    newRow.id = randomId;
     const newTableRawState = { ...this.state };
     newTableRawState.tableRows[randomId] = newRow;
 
     this.setState(newRow, () => {
-      console.log('new state', newRow);
-    })
-  }
+      console.log('new state', this.state);
+    });
+  };
 
   render() {
     return (
