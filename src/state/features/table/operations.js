@@ -1,5 +1,3 @@
 import { addRow } from './actions';
 
-export {
-    addRow,
-};
+export { addRow };

@@ -12,16 +12,13 @@ import { createReducer } from '../../utils';
 }
 */
 
-const initialState = {
-   
-};
+const initialState = {};
 
 const table = createReducer(initialState)({
-    [types.ADD_ROW]: (state, action) => {
-        const { row } = action.payload;
-        return { ...state, row };
-    }
-   
+  [types.ADD_ROW]: (state, action) => {
+    const { row } = action.payload;
+    return { ...state, row };
+  }
 });
 
 export default table;
