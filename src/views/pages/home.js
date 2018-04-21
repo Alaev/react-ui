@@ -36,7 +36,7 @@ class Home extends Component {
 
 const mapStateToProps = state => ({
   cart: state.cart,
-  getCartItemQuantity: cartOperations.getCartItemQuantity(state)
+  getCartItemQuantity: cartOperations.getCartItemQuantity(state),
 });
 
 const mapDispatchToProps = {
@@ -44,7 +44,7 @@ const mapDispatchToProps = {
   changeQuantity: cartOperations.changeQuantity,
   removeFromCart: cartOperations.removeFromCart,
   clearCart: cartOperations.clearCart,
-  setCart: cartOperations.setCart
+  setCart: cartOperations.setCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

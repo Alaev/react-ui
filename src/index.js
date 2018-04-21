@@ -6,19 +6,17 @@ import App from './views/layouts/app';
 import { configureStore } from './state/store';
 import registerServiceWorker from './registerServiceWorker';
 
-
-import 'bulma/css/bulma.css'
-
+import 'bulma/css/bulma.css';
 
 const REDUX_INITIAL_DATA = {};
 const reduxStore = configureStore(REDUX_INITIAL_DATA);
 
 const RootHtml = () => (
-    <ReduxProvider store={reduxStore}>
-        <Router>
-            <App />
-        </Router>
-    </ReduxProvider>
+  <ReduxProvider store={reduxStore}>
+    <Router>
+      <App />
+    </Router>
+  </ReduxProvider>
 );
 
 ReactDOM.render(<RootHtml />, document.getElementById('root'));

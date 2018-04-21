@@ -1,9 +1,8 @@
-
 /* eslint-disable no-unused-expressions */
 // import { injectGlobal } from "styled-components";
 
 export default () => {
-    injectGlobal` 
+  injectGlobal`
         body {
             background-color: levander;
             color: navy-blue;
@@ -20,5 +19,5 @@ export default () => {
         }
     `;
 
-    return null;
+  return null;
 };

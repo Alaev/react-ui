@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
-import Table from '../../../../views/components/Table';
-import { TableBody } from '../../../../views/components/Table/TableBody';
-import TableProvider from '../../../../context/table';
+import Table from './';
+import { TableBody } from './TableBody';
+import TableProvider from '../../../context/table';
 
 import 'bulma/css/bulma.css';
 
@@ -15,9 +15,9 @@ const table_body_one = {
     publisher: 'web',
     watched: {
       type: 'checkbox',
-      value: true
-    }
-  }
+      value: true,
+    },
+  },
 };
 
 const table_body_two = {
@@ -29,9 +29,9 @@ const table_body_two = {
     publisher: 'web',
     watched: {
       type: 'checkbox',
-      value: false
-    }
-  }
+      value: false,
+    },
+  },
 };
 
 const table_body_missing_cell = {
@@ -43,9 +43,9 @@ const table_body_missing_cell = {
     publisher: '',
     watched: {
       type: 'checkbox',
-      value: false
-    }
-  }
+      value: false,
+    },
+  },
 };
 
 const TableComponentStory = storiesOf('Table Components', module)

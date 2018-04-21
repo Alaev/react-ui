@@ -1,14 +1,14 @@
 import React from 'react';
 import TableBody from './TableBody';
-import TableForm from '../Form'
+import TableForm from '../Form';
 
-const Table = ({Provider}) => (
+const Table = ({ Provider }) => (
   <Provider>
     <table className="table is-bordered is-fullwidth">
-     <TableBody />
+      <TableBody />
     </table>
 
-    <TableForm/>
+    <TableForm />
   </Provider>
 );
 

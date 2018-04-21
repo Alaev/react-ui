@@ -2,11 +2,15 @@ import React from 'react';
 import { TableContext } from '../../../../context/table';
 
 const styles = {
-  textAlign: 'center'
+  textAlign: 'center',
 };
 
 export const CheckboxCel = props => {
-  const { info, handelCheckboxInteraction, data: { type, value } } = props;
+  const {
+    info,
+    handelCheckboxInteraction,
+    data: { type, value },
+  } = props;
   return (
     <td style={styles}>
       <input type={type} name={info} defaultChecked={value} onChange={handelCheckboxInteraction} />
@@ -15,7 +19,7 @@ export const CheckboxCel = props => {
 };
 
 CheckboxCel.defaultProps = {
-  handelCheckboxInteraction: () => console.warn('hi did you forget to pass actions?')
+  handelCheckboxInteraction: () => console.warn('hi did you forget to pass actions?'),
 };
 
 const ConnectedCheckboxCel = props => {
