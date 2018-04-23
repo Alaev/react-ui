@@ -7,7 +7,6 @@ const Table = ({ Provider }) => (
     <table className="table is-bordered is-fullwidth">
       <TableBody />
     </table>
-
     <TableForm />
   </Provider>
 );
