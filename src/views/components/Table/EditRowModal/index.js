@@ -7,22 +7,13 @@ import styled from 'styled-components';
 // close modal on click out side
 // close modal on blur
 
-
 const Td = styled.td`
-  text-align:center;
-  
-  :hover{
-    cursor: pointer
-  }
-`
+  text-align: center;
 
-const Tag = styled.span`
-  border: 1px solid red;
-  background-color: red;
-  color: white;
-  border-radius: 25px;
-  padding:1px 10px;
-`
+  :hover {
+    cursor: pointer;
+  }
+`;
 
 class EditRowModal extends Component {
   state = {
@@ -36,9 +27,13 @@ class EditRowModal extends Component {
   render() {
     return (
       <React.Fragment>
-       {
-         this.state.open ?  <Td onClick={this.hide}>hello from modal</Td> : <Td onClick={this.show}> <Tag>Edit</Tag></Td>
-       }
+        {this.state.open ? (
+          <Td onClick={this.hide}>hello from modal</Td>
+        ) : (
+          <Td onClick={this.show}>
+            <span className="tag is-rounded is-success is-uppercase has-text-weight-semibold">edit</span>
+          </Td>
+        )}
       </React.Fragment>
     );
   }
