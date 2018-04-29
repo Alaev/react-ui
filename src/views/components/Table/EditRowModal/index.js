@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 // TODO:
-// get value from this.props.
-// update the the storage with new value
+// done - update the the storage with new value on click
 // close modal on click add
 // close modal on click out side
 // close modal on blur
+
+
+const Td = styled.td`
+  text-align:center;
+  
+  :hover{
+    cursor: pointer
+  }
+`
+
+const Tag = styled.span`
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+  padding:1px 10px;
+`
 
 class EditRowModal extends Component {
   state = {
@@ -19,7 +36,9 @@ class EditRowModal extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>hello from modal</div>
+       {
+         this.state.open ?  <Td onClick={this.hide}>hello from modal</Td> : <Td onClick={this.show}> <Tag>Edit</Tag></Td>
+       }
       </React.Fragment>
     );
   }

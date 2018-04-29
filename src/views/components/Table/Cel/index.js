@@ -7,8 +7,6 @@ const Cel = ({ data, info }) => {
       return <CheckboxCel data={data} info={info} />;
     case 'radio':
       return <td>radio cell that support grouping</td>;
-    case 'edit':
-      return <td>edit</td>
     default:
       return <td>{data}</td>;
   }

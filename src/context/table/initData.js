@@ -8,7 +8,7 @@ export default {
     watched: {
       type: 'checkbox',
       value: true
-    }
+    },
   },
   2: {
     name: 'javascript 102',
@@ -19,6 +19,6 @@ export default {
     watched: {
       type: 'checkbox',
       value: false
-    }
+    },
   }
 };
