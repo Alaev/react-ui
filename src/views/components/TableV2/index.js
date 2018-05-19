@@ -2,6 +2,7 @@
 // https://github.com/react-tools/react-table
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
+import "react-table/react-table.css";
 
 export default class TableV2 extends Component {
   render() {
@@ -24,7 +25,9 @@ export default class TableV2 extends Component {
       {
         Header: 'Age',
         accessor: 'age',
-        Cell: props => <span className="number">{props.value}</span>,
+        Cell: props => (<div className="has-text-centered">
+          <span className="tag is-round is-info" >{props.value}</span>
+        </div>),
       },
       {
         id: 'friendName',
@@ -37,6 +40,6 @@ export default class TableV2 extends Component {
       },
     ];
 
-    return <ReactTable data={data} columns={columns} />;
+    return <ReactTable data={data} columns={columns} defaultPageSize={5} />;
   }
 }
