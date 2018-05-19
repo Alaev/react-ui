@@ -40,6 +40,6 @@ export default class TableV2 extends Component {
       },
     ];
 
-    return <ReactTable data={data} columns={columns} defaultPageSize={5} />;
+    return <ReactTable showPaginationBottom={false} data={data} columns={columns} defaultPageSize={5} className="-striped -highlight" />;
   }
 }
