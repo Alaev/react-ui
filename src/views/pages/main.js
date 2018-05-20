@@ -11,7 +11,7 @@ class Main extends Component {
         <br />
         {/* <Table Provider={TableProvider} /> */}
 
-        <TableV2 />
+        <TableV2  Provider={TableProvider}/>
       </div>
     );
   }
