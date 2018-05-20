@@ -1,11 +1,12 @@
-// testing react table in action
-// https://github.com/react-tools/react-table
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
-import "react-table/react-table.css";
+import 'react-table/react-table.css';
+import { TableContext } from '../../../context/table';
+import * as _map from 'lodash/map';
 
 export default class TableV2 extends Component {
   render() {
+    const { Provider } = this.props;
     const data = [
       {
         name: 'Tanner Linsley',
@@ -25,9 +26,11 @@ export default class TableV2 extends Component {
       {
         Header: 'Age',
         accessor: 'age',
-        Cell: props => (<div className="has-text-centered">
-          <span className="tag is-round is-info" >{props.value}</span>
-        </div>),
+        Cell: props => (
+          <div className="has-text-centered">
+            <span className="tag is-round is-info">{props.value}</span>
+          </div>
+        ),
       },
       {
         id: 'friendName',
@@ -40,6 +43,25 @@ export default class TableV2 extends Component {
       },
     ];
 
-    return <ReactTable showPaginationBottom={false} data={data} columns={columns} defaultPageSize={5} className="-striped -highlight" />;
+    return (
+      <Provider>
+        <TableContext.Consumer>
+          {({ tableRows }) =>
+            <React.Fragment>
+            <ReactTable
+              tableRows={tableRows}
+              showPaginationBottom={false}
+              data={tableRows}
+              columns={columns}
+              defaultPageSize={5}
+              className="-striped -highlight"
+            />
+            <span>{_map(tableRows,(t => <pre key={t.id}>{t.name}</pre>))}</span>
+
+            </React.Fragment>
+          }
+        </TableContext.Consumer>
+      </Provider>
+    );
   }
 }
