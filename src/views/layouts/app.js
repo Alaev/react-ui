@@ -10,10 +10,10 @@ const App = () => (
       background: '#6cf',
       paddingLeft: '40px',
       lineHeight: '40px',
-      fontWeight:'bold'
+      fontWeight: 'bold'
     }}>
-      <Link style={{color:'white', paddingRight:'15px'}} to="/">Main</Link>
-      <Link style={{color:'white', paddingRight:'15px'}} to="/home">Home</Link>
+      <Link style={{ color: 'white', paddingRight: '15px' }} to="/">Main</Link>
+      <Link style={{ color: 'white', paddingRight: '15px' }} to="/home">Home</Link>
     </header>
 
     {routes.map(route => <Route key={route.path} {...route} />)}

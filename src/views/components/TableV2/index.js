@@ -4,7 +4,7 @@ import 'react-table/react-table.css';
 import { TableContext } from '../../../context/table';
 import * as _map from 'lodash/map';
 
-import {columns} from './columns';
+import { columns } from './columns';
 export default class TableV2 extends Component {
   render() {
     const { Provider } = this.props;
@@ -23,7 +23,6 @@ export default class TableV2 extends Component {
                 className="-striped -highlight"
               />
               <span>{JSON.stringify()}</span>
-
             </React.Fragment>
           }
         </TableContext.Consumer>

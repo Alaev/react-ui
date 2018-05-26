@@ -15,6 +15,6 @@ const TableV2ComponentStory = storiesOf('Table v2 Components', module).add(
     ~~~js
     <Table Provider={TableProvider} />
       ~~~
-    `
+    `,
   )(() => <Table Provider={TableProvider} />),
 );

@@ -11,7 +11,7 @@ export const columns = [
   {
     id: 'name',
     Header: 'Course Name',
-    accessor:  d => (
+    accessor: d => (
       <div className="has-text-centered">
         {d.name}
       </div>),
@@ -19,7 +19,7 @@ export const columns = [
   {
     id: 'date',
     Header: 'date',
-    accessor:  d => (
+    accessor: d => (
       <div className="has-text-centered">
         {d.date}
       </div>),
