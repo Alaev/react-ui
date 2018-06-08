@@ -12,6 +12,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-sortable-tree": "^2.1.2",
     "react-table": "^6.8.2",
     "react-toastify": "^4.0.1",
     "react-virtualized": "^9.19.1",
