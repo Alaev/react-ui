@@ -15,9 +15,11 @@ class Main extends Component {
         {/* Table one example */}
         {/* <Table Provider={TableProvider} /> */}
 
-        <TableV2  Provider={TableProvider}/>
+        {/* <TableV2  Provider={TableProvider}/> */}
 
         {/* table 3 example */}
+
+        <TableV3 />
       </div>
     );
   }

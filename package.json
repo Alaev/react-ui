@@ -7,6 +7,7 @@
     "formik": "^0.11.11",
     "lodash": "^4.17.5",
     "react": "^16.3.0",
+    "react-anime": "^2.1.0",
     "react-dom": "^16.3.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
