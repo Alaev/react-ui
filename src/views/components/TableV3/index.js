@@ -1,12 +1,7 @@
 import React from 'react';
 import Anime from 'react-anime';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-const notify = () =>
-  toast('Animated Box Was Clicked', {
-    position: toast.POSITION.BOTTOM_RIGHT,
-  });
+import { ToastContainer } from 'react-toastify';
+import { toastSuccess } from '../toast'
 
 const App = props => (
   <React.Fragment>
@@ -18,7 +13,7 @@ const App = props => (
       rotate={540}
       translateX="50vw"
     >
-      <div onClick={notify} style={{ backgroundColor: 'red', width: '100px', height: '100px', color:'white' }} >Click Me</div>
+      <div onClick={toastSuccess} style={{ backgroundColor: 'red', width: '100px', height: '100px', color:'white' }} >Click Me</div>
       <div style={{ backgroundColor: 'green', width: '100px', height: '100px' }} />
       <div style={{ backgroundColor: 'blue', width: '100px', height: '100px' }} />
     </Anime>
