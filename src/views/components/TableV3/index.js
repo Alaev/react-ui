@@ -1,7 +1,11 @@
 import React from 'react';
 import Anime from 'react-anime';
-import { ToastContainer } from 'react-toastify';
-import { toastSuccess } from '../toast'
+import { toast, ToastContainer } from 'react-toastify';
+
+const toastSuccess = () =>
+  toast('Animated Box Was Clicked', {
+    position: toast.POSITION.BOTTOM_RIGHT,
+  });
 
 const App = props => (
   <React.Fragment>

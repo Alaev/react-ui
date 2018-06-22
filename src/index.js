@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import App from './views/layouts/app';
 import { configureStore } from './state/store';
+import 'react-toastify/dist/ReactToastify.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import 'bulma/css/bulma.css';
