@@ -6,6 +6,8 @@
     "bulma": "^0.6.2",
     "formik": "^0.11.11",
     "lodash": "^4.17.10",
+    "mobx": "^5.0.3",
+    "mobx-react": "^5.2.3",
     "react": "^16.4.1",
     "react-anime": "^2.1.0",
     "react-dom": "^16.4.1",
